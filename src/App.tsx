@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Copy, Check, Tv, Sparkles } from 'lucide-react';
 
 interface IptvItem {
