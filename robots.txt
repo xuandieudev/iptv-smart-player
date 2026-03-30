@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://iptv-public-source.netlify.app/sitemap.xml
