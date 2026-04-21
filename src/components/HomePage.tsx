@@ -58,20 +58,28 @@ export default function HomePage() {
                 </h3>
               </div>
               
-              <div className="flex items-center justify-between bg-[#050505] rounded-xl border border-[#2B2B2B] p-1.5 pl-4 group-hover:border-[#FF002C]/20 transition-colors">
-                <code className="text-sm text-gray-500 font-mono truncate mr-4">
+              <div className={`flex items-center justify-between bg-[#050505] rounded-xl border p-1.5 pl-4 transition-all duration-300 ${
+                copiedId === item.id ? 'border-green-500/40 bg-green-500/5' : 'border-[#2B2B2B] group-hover:border-[#FF002C]/20'
+              }`}>
+                <code className={`text-xs sm:text-sm font-mono truncate mr-2 transition-colors ${
+                  copiedId === item.id ? 'text-green-400' : 'text-gray-500'
+                }`}>
                   {item.url}
                 </code>
                 <button
                   onClick={() => handleCopy(item.url, item.id)}
-                  className={`shrink-0 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-sm font-bold transition-all duration-200 ${
+                  className={`shrink-0 flex items-center justify-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-lg text-[10px] sm:text-xs font-black uppercase tracking-[0.05em] transition-all duration-300 ${
                     copiedId === item.id
-                      ? 'bg-green-500/10 text-green-500 border border-green-500/20 shadow-[0_0_10px_rgba(34,197,94,0.1)]'
-                      : 'bg-[#1a1a1a] text-gray-400 hover:text-white hover:bg-[#2B2B2B] border border-transparent'
+                      ? 'bg-green-500 text-[#050505] shadow-[0_0_15px_rgba(34,197,94,0.3)]'
+                      : 'bg-[#FF002C]/5 text-[#FF002C] hover:bg-[#FF002C] hover:text-white border border-[#FF002C]/20 shadow-[0_0_15px_rgba(255,0,44,0.05)]'
                   }`}
                 >
-                  {copiedId === item.id ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
-                  <span className="hidden sm:inline">{copiedId === item.id ? 'Copied' : 'Copy'}</span>
+                  {copiedId === item.id ? (
+                    <Check className="w-3.5 h-3.5 sm:w-4 h-4 stroke-[3]" />
+                  ) : (
+                    <Copy className="w-3.5 h-3.5 sm:w-4 h-4 stroke-[3]" />
+                  )}
+                  <span>{copiedId === item.id ? 'Copied' : 'Copy'}</span>
                 </button>
               </div>
             </div>

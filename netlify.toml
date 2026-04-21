@@ -17,7 +17,7 @@
   to = "/sitemap.xml"
   status = 200
 
-    [[redirects]]
+[[redirects]]
   from = "/robots.txt"
-  to = "/robots.txt
+  to = "/robots.txt"
   status = 200
